@@ -7,15 +7,17 @@
     \;
 
     <assign|the-example|<macro|<compound|display-example|<value|<compound|counter-example>>>>>
+
+    <assign|formatRef|<macro|str|<extern|formatRefScheme|<arg|str>><reference|<arg|str>>>>
+
+    <assign|addToFormatRef|<macro|formatCode|formatString|<extern|addToFormatListScheme|<arg|formatCode>|<arg|formatString>>>>
+
+    <assign|deleteFromFormatRef|<macro|formatCode|n|<extern|deleteFromFormatListScheme|<arg|formatCode>|<arg|n>>>>
+
+    <assign|replaceInFormatRef|<macro|formatCode|formatString|n|<extern|replaceInFormatListScheme|<arg|formatCode>|<arg|formatString>|<arg|n>>>>
+
+    \;
   </hide-preamble>
-
-  <assign|formatRef|<macro|str|<extern|formatRefScheme|<arg|str>><reference|<arg|str>>>>
-
-  <assign|addToFormatRef|<macro|formatCode|formatString|<extern|addToFormatListScheme|<arg|formatCode>|<arg|formatString>>>>
-
-  <assign|deleteFromFormatRef|<macro|formatCode|n|<extern|deleteFromFormatListScheme|<arg|formatCode>|<arg|n>>>>
-
-  <assign|replaceInFormatRef|<macro|formatCode|formatString|n|<extern|replaceInFormatListScheme|<arg|formatCode>|<arg|formatString>|<arg|n>>>>
 
   <doc-data|<doc-title|Formatted references>|<\doc-subtitle>
     A set of Scheme functions for formatting references
@@ -339,12 +341,12 @@
     <associate|auto-2|<tuple|2|1|Formatted references_021.tm>>
     <associate|auto-3|<tuple|1|1|Formatted references_021.tm>>
     <associate|auto-4|<tuple|2|1|Formatted references_021.tm>>
-    <associate|auto-5|<tuple|3|2|Formatted references_021.tm>>
+    <associate|auto-5|<tuple|3|1|Formatted references_021.tm>>
     <associate|auto-6|<tuple|4|2|Formatted references_021.tm>>
     <associate|auto-7|<tuple|3|2|Formatted references_021.tm>>
     <associate|auto-8|<tuple|4|2|Formatted references_021.tm>>
-    <associate|auto-9|<tuple|4.1|3|Formatted references_021.tm>>
-    <associate|eq:testFormat|<tuple|1|3|Formatted references_021.tm>>
+    <associate|auto-9|<tuple|4.1|2|Formatted references_021.tm>>
+    <associate|eq:testFormat|<tuple|1|2|Formatted references_021.tm>>
     <associate|sec:listManipulation|<tuple|4.2|3|Formatted
     references_021.tm>>
   </collection>
