@@ -8,3 +8,5 @@ It provides the macro `formatRef` (`<formatRef|lab>`) which formats a reference 
 `formatString<reference|lab>`
 The labels must be assigned according to the format codes so that the macros have an effect. If no format code matches, the macro returns
 `<reference|lab>`
+
+The .pdf files show how the TeXmacs files look like after the Scheme functions have been loaded and the TeXmacs macros executed.
