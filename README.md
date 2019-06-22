@@ -18,7 +18,7 @@ The .pdf file shows how the TeXmacs files look like after the Scheme functions h
 * `<addToFormatRef|formatKey|formatString>`
     * Adds the format key `formatKey` with corresponding format string `formatString` from the list of formats
 * `<replaceInFormatRef|formatKey|formatString|n>`
-    * Replace in the n-th occurrence of the format with `formatKey` format key the given format string `formatString`
+    * Replaces in the n-th occurrence of the format with `formatKey` format key the given format string `formatString`
 * `<deleteFromFormatRef|formatKey|n>`
     * Deletes the n-th occurrence of the format with `formatKey` format key
 * `<formatRef|lab>`
