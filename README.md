@@ -29,17 +29,20 @@ The .pdf file shows how the TeXmacs files look like after the Scheme functions h
 The program consists of the following files:
 * Style file
     * `Formatted references.ts`
+    * `Formatted references_setup.ts`
 * Scheme files
     * `interfaceToTeXmacs.scm`
     * `manipulateList.scm`
     * `selectFormat.scm`
 
-* Put the style file in the directory `~/.TeXmacs/packages` or in a subdirectory of it (for example `~/.TeXmacs/packages/formatRef`)
+* Put the style files in the directory `~/.TeXmacs/packages` or in a subdirectory of it (for example `~/.TeXmacs/packages/formatRef`)
 * Put the scheme files in the directory `~/.TeXmacs/progs/formatRef`.
     * It has to be in this subdirectory as the style file is looking for the Scheme files there through the command `<use-module|(formatRef interfaceToTeXmacs)>`
     
-After this, the package will be available in TeXmacs under the menu `Document->Style-> Add package`.
+After this, the `Formatted references` package will be available in TeXmacs under the menu `Document->Style-> Add package`.
 It will be possible to add format definitions using the macro `addToFormatRef` and use them with the macro `formatRef`.
+The style file `Formatted references_setup` applies the `addToFormatRef` macro to define several format keys and can be loaded in addition to the `Formatted references` package.
+Please note that in tis version hte format list is defined in the Scheme files using `tm-define`, and this means that the format list is the same for all TeXmacs documents.
 
 ### Adding format keys (and warning - improvement is necessary)
-For the moment (2019.06.22) I am placing the macros which add format definitions in the hidden preamble (with the macro `<hide-preamble|`); but I am not able not able to execute them only once: they get executed every time TeXmacs updates itself automatically. The format list does not get affected by the repeated use of `addToFormatRef` because `addToFormatRef` checks for the existence of the format key in the format list before adding it; this has to be corrected anyway for a "clean code". The macro `replaceInFormatRef` would continue modifying the format list (as long as the format key that `replaceInFormatRef` is trying to modify exists), while `deleteFromFormatRef` in combination with  `addToFormatRef` would keep deleting and adding a given key from the format list.
+In this version I am adding format keys through the style file `Formatted references_setup.ts` and apparently the `addToFormatRef` macro is executed only once. This works by defining the format list with `tm-define` in the Scheme functions, and this means that it is the same in every TeXmacs document.
