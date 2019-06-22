@@ -23,8 +23,8 @@ The program consists of the following files:
     * `manipulateList.scm`
     * `selectFormat.scm`
 
-* Put the style file in the directory ~/.TeXmacs/packages or in a subdirectory of it (for example ~/.TeXmacs/packages/formatRef)
-* Put the scheme files in the directory ~/.TeXmacs/progs/formatRef.
-** It has to be in this subdirectory as the style file is looking for the Scheme files there through the command <use-module|(formatRef interfaceToTeXmacs)>
+* Put the style file in the directory `~/.TeXmacs/packages` or in a subdirectory of it (for example `~/.TeXmacs/packages/formatRef`)
+* Put the scheme files in the directory `~/.TeXmacs/progs/formatRef`.
+    * It has to be in this subdirectory as the style file is looking for the Scheme files there through the command `<use-module|(formatRef interfaceToTeXmacs)>`
 
 
