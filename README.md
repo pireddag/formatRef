@@ -40,3 +40,6 @@ The program consists of the following files:
     
 After this, the package will be availabe in TeXmacs under the menu `Document->S tyle-> Add package`.
 It will be possible to add format definitions using the macro `addToFormatRef` and use them with the macro `formatRef`.
+
+### Adding format keys (and warning - improvement is necessary)
+For the moment (2019.06.22) I am placing the macros which add format definitions in the hidden preamble (with the macro `<hide-preamble|`); but I am not able not able to execute them only once: they get executed every time TeXmacs updates itself automatically. The format list does not get affected by the repeated use of `addToFormatRef` because `addToFormatRef` checks for the existence of the format key in the format list before adding it; this has to be corrected anyway for a "clean code". The macro `replaceInFormatRef` would continue modifying the format list (as long as the format key that `replaceInFormatRef` is trying to modify exists), while `deleteFromFormatRef` in combination with  `addToFormatRef` would keep deleting and adding a given key from the format list.
