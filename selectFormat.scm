@@ -1,8 +1,3 @@
-
-
-
-
-
 					;formatList is the list of all formats (for the moment empty)
 (define formatList (list))
 
