@@ -17,11 +17,11 @@ The .pdf file shows how the TeXmacs files look like after the Scheme functions h
 
 The program consists of the following files:
 * Style file
-** `Formatted references.ts`
+    *`Formatted references.ts`
 * Scheme files
-** `interfaceToTeXmacs.scm`
-** `manipulateList.scm`
-** `selectFormat.scm`
+    * `interfaceToTeXmacs.scm`
+    * `manipulateList.scm`
+    * `selectFormat.scm`
 
 * Put the style file in the directory ~/.TeXmacs/packages or in a subdirectory of it (for example ~/.TeXmacs/packages/formatRef)
 * Put the scheme files in the directory ~/.TeXmacs/progs/formatRef.
