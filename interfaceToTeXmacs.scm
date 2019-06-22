@@ -1,3 +1,6 @@
+(texmacs-module (formatRef interfaceToTeXmacs))
+
+
 (tm-define (formatRefScheme str)
   (set! str (tree->stree str))
   (stree->tree (extractFormatString str formatList)))
@@ -26,6 +29,9 @@
  )
     (replaceFormat ft n)))
 
+(load "manipulateList.scm")
+
+(load "selectFormat.scm")
 
 
 

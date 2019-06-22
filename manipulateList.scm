@@ -1,4 +1,7 @@
 
+
+
+
 					; An and function that can be applied to lists (using the Scheme function apply).
 					; It returns #t if all elements of the list are #t.
 					; Copied from a Stackexchange question.
@@ -67,7 +70,7 @@
         ((checkFormatPresent formatGroup) (begin (display "Format is already present, use replaceFormatGroup to replace") #f))
          (else #t)))
 
-(define (addToFormatList formatGroup)
+(tm-define (addToFormatList formatGroup)
   (if (checkFormatGroupAdd formatGroup)
       (set! formatList (append formatList (list formatGroup)))
       (display "\nincorrect application of addToFormatList")))
