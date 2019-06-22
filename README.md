@@ -17,7 +17,7 @@ The .pdf file shows how the TeXmacs files look like after the Scheme functions h
 
 The program consists of the following files:
 * Style file
-    *`Formatted references.ts`
+    * `Formatted references.ts`
 * Scheme files
     * `interfaceToTeXmacs.scm`
     * `manipulateList.scm`
