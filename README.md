@@ -42,7 +42,7 @@ The program consists of the following files:
 After this, the `Formatted references` package will be available in TeXmacs under the menu `Document->Style-> Add package`.
 It will be possible to add format definitions using the macro `addToFormatRef` and use them with the macro `formatRef`.
 The style file `Formatted references_setup` applies the `addToFormatRef` macro to define several format keys and can be loaded in addition to the `Formatted references` package.
-Please note that in tis version hte format list is defined in the Scheme files using `tm-define`, and this means that the format list is the same for all TeXmacs documents.
+Please note that in tis version the format list is defined in the Scheme files using `tm-define`, and this means that the format list is the same for all TeXmacs documents.
 
 ### Adding format keys (and warning - improvement is necessary)
-In this version I am adding format keys through the style file `Formatted references_setup.ts` and apparently the `addToFormatRef` macro is executed only once. This works by defining the format list with `tm-define` in the Scheme functions, and this means that it is the same in every TeXmacs document.
+In this version I am adding format keys through the style file `Formatted references_setup.ts` and apparently the `addToFormatRef` macro calls that I placed therein are executed only once. This arrangement works by defining the format list with `tm-define` (instead than with `define`) in the Scheme functions, and this means that it is the same in every TeXmacs document.
