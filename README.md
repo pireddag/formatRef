@@ -38,7 +38,7 @@ The program consists of the following files:
 * Put the scheme files in the directory `~/.TeXmacs/progs/formatRef`.
     * It has to be in this subdirectory as the style file is looking for the Scheme files there through the command `<use-module|(formatRef interfaceToTeXmacs)>`
     
-After this, the package will be availabe in TeXmacs under the menu `Document->Style-> Add package`.
+After this, the package will be available in TeXmacs under the menu `Document->Style-> Add package`.
 It will be possible to add format definitions using the macro `addToFormatRef` and use them with the macro `formatRef`.
 
 ### Adding format keys (and warning - improvement is necessary)
