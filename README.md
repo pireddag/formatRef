@@ -13,6 +13,17 @@ The labels must be assigned according to the format codes so that the macros hav
 
 The .pdf file shows how the TeXmacs files look like after the Scheme functions have been loaded and the TeXmacs macros executed.
 
+## Macros
+
+* `<addToFormatRef|formatKey|formatString>`
+    * Adds the format key `formatKey` with corresponding format string `formatString` from the list of formats
+* `<replaceInFormatRef|formatKey|formatString|n>`
+    * Replace in the n-th occurrence of the format with `formatKey` format key the given format string `formatString`
+* `<deleteFromFormatRef|formatKey|n>`
+    * Deletes the n-th occurrence of the format with `formatKey` format key
+* `<formatRef|lab>`
+    * Generates a formatted reference for item with the label `lab`
+
 ## Instructions
 
 The program consists of the following files:
@@ -26,5 +37,6 @@ The program consists of the following files:
 * Put the style file in the directory `~/.TeXmacs/packages` or in a subdirectory of it (for example `~/.TeXmacs/packages/formatRef`)
 * Put the scheme files in the directory `~/.TeXmacs/progs/formatRef`.
     * It has to be in this subdirectory as the style file is looking for the Scheme files there through the command `<use-module|(formatRef interfaceToTeXmacs)>`
-
-
+    
+After this, the package will be availabe in TeXmacs under the menu `Document->S tyle-> Add package`.
+It will be possible to add format definitions using the macro `addToFormatRef` and use them with the macro `formatRef`.
