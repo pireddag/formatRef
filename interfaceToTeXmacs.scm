@@ -1,9 +1,23 @@
 (texmacs-module (formatRef interfaceToTeXmacs))
 
 
+;(tm-define (formatRefScheme str)
+;  (set! str (tree->stree str))
+;  (stree->tree (extractFormatString str formatList)))
+
 (tm-define (formatRefScheme str)
   (set! str (tree->stree str))
-  (stree->tree (extractFormatString str formatList)))
+  (stree->tree (concat (combineFormatStringRef str formatList))))
+
+(tm-define (formatRefSchemeFirst str)
+	   (set! str (tree->stree str))
+	   (stree->tree (extractFormatStringFirst str formatList)))
+
+(tm-define (formatRefSchemeRest str)
+	   (set! str (tree->stree str))
+	   (stree->tree (extractFormatStringRest str formatList)))
+
+
 
 (tm-define (addToFormatListScheme formatCode formatString)
   (set! formatCode (tree->stree formatCode))
@@ -33,7 +47,7 @@
 
 (load "selectFormat.scm")
 
-
+(load "formatRefUtils.scm")
 
 
 

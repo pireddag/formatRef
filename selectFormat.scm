@@ -100,3 +100,21 @@
      (if (not (= (length format) 2))
                  ""
                  (car (cdr format)))))
+
+					; split the format so that the reference will be set at the first # sign
+(define (extractFormatStringFirst str labelFormats)
+  (let ((formatStr (extractFormatString str labelFormats)))
+    (car (string-split formatStr #\#))))
+
+(define (extractFormatStringRest str labelFormats)
+  (let ((formatStr (extractFormatString str labelFormats)))
+    (string-join (cdr (string-split formatStr #\#)) "#")))
+
+;(define (extractFormatStringFirst str labelFormats) "")
+
+;(define (extractFormatStringRest str labelFormats) "")
+
+
+(define (combineFormatStringRef str labelFormats)
+  (let ((formatStr (extractFormatString str labelFormats)))
+    (combine formatStr (list `reference str))))

@@ -5,7 +5,7 @@
 <\body>
   <use-module|(formatRef interfaceToTeXmacs)>
 
-  <assign|formatRef|<macro|str|<extern|formatRefScheme|<arg|str>><reference|<arg|str>>>>
+  <assign|formatRef|<macro|str|<extern|formatRefScheme|<arg|str>>>>
 
   <assign|addToFormatRef|<macro|formatCode|formatString|<extern|addToFormatListScheme|<arg|formatCode>|<arg|formatString>>>>
 

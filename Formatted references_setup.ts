@@ -1,19 +1,16 @@
 <TeXmacs|1.99.9>
 
-<style|<tuple|source|Formatted references>>
+<style|source>
 
 <\body>
-  <addToFormatRef|sec:|Section >
+  <addToFormatRef|sec:|Section #>
 
-  <addToFormatRef|eq:|Equation >
+  <addToFormatRef|eq:|Equation (#)>
 
-  <addToFormatRef|tab:|Table >
+  <addToFormatRef|fig:|Figure #>
 
-  <addToFormatRef|fig:|Figure >
+  <addToFormatRef|tab:|Table #>
 </body>
 
-<\initial>
-  <\collection>
-    <associate|preamble|false>
-  </collection>
-</initial>
+<initial|<\collection>
+</collection>>
