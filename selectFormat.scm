@@ -114,7 +114,7 @@
 
 ;(define (extractFormatStringRest str labelFormats) "")
 
-
+; uses the combine function of formatRefUtils, which interleavs strings and (reference lab) lists, prepends a concat to send the results to TeXmacs  through tree->stree
 (define (combineFormatStringRef str labelFormats)
   (let ((formatStr (extractFormatString str labelFormats)))
     (combine formatStr (list `reference str))))
