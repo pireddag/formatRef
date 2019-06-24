@@ -7,7 +7,10 @@
   (flatten (map (lambda (x y) (cons x (cons y (list)))) list1 list2)))
 
 					; https://stackoverflow.com/questions/33338078/flattening-a-list-in-scheme
-; the scheme implementation I have does not have a flatten function
+					; the scheme implementation I have does not have a flatten function
+					; it is slightly modified as I want to flatten one level only, so I append (car lst) and not (flatten (car lst))
+					; I do not have completely clear the else case of the cond, but it should take care of all elements that are not lists, so it does not unpack them. I have to rethink about the whole implementation of this function as it involves understanding the Scheme data types.
+; The application of append is the critical thing. It appends a list to the next rather than inserting it as an element. I do have to check why "pair?" makes sure that this is possible. 
 
 (define (flatten lst)
   (cond ((null? lst) '())
