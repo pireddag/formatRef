@@ -41,6 +41,7 @@ The program consists of the following files:
     * `interfaceToTeXmacs.scm`
     * `manipulateList.scm`
     * `selectFormat.scm`
+    * `formatRefUtils.scm`
 
 * Put the style files in the directory `~/.TeXmacs/packages` or in a subdirectory of it (for example `~/.TeXmacs/packages/formatRef`)
 * Put the scheme files in the directory `~/.TeXmacs/progs/formatRef`.
