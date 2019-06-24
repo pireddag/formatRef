@@ -8,7 +8,7 @@ This program is inspired by the LaTeX package prettyref.
 
 This program provides the macro `formatRef` (`<formatRef|lab>`) which formats a reference choosing in a list of formats saved in the global variable formatList. Each format is a list consisting of two members; the first member is a format code, which is a short string, while the second member is the corresponding format to apply to the reference. The function selects the format by comparing the format code with the beginning of the label: the first element of formatList that matches is selected and the corresponding format string formatString is applied to the TeXmacs reference. 
 
-The format strings should contain the character `#`. The reference will be substituted in the format string for all occurrences of the `#` character. For example, if the foramt string is 
+The format strings should contain the character `#`. The reference will be substituted in the format string for all occurrences of the `#` character. For example, if the format string is 
 
 `equation (#)`
 
