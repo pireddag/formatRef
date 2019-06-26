@@ -15,8 +15,9 @@ The format strings should contain the character `#`. The reference will be subst
 the reference obtained with the macro `<formatRef|lab>` looks like 
 `equation (<reference|lab>)`
 
-The labels must be assigned according to the format codes so that the macros have an effect. If no format code matches, the macro returns
+The labels must be assigned according to the format codes so that the macros have an effect. If no format code matches, the macro at the moment returns an empty string. The plan is to get in this case as return
 `<reference|lab>`
+maybe with a switch that chooses between `<reference|lab>` (as default perhaps) and nothing.
 
 The .pdf file shows how the TeXmacs files look like after the Scheme functions have been loaded and the TeXmacs macros executed.
 
