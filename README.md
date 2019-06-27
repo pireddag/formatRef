@@ -17,7 +17,7 @@ the reference obtained with the macro `<formatRef|lab>` looks like
 
 The labels must be assigned according to the format codes so that the macros have an effect. If no format code matches, the macro at the moment returns
 `<reference|lab>`
-but it does not distingusih between the no-atch and a match that returns a string of zreo length.
+but it does not distinguish between the no-atch and a match that returns a string of zero length.
 In addition to the distinction, it could be nice to have a switch that chooses between `<reference|lab>` (as default perhaps) and nothing.
 
 The .pdf file shows how the TeXmacs files look like after the Scheme functions have been loaded and the TeXmacs macros executed.
