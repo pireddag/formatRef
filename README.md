@@ -64,4 +64,7 @@ There is a simple function to issue tests with the following property:
 * if the test is passed, the program is quiet
 * if the test is failed, the program outputs a description of the test, the test command and the desired output
 
-The test loads files from directories that are specified in an absolute way; I haven't yet figured out how to get Scheme to load files from directories specified with a relative path. 
+The test loads files from directories that are specified in an absolute way; I haven't yet figured out how to get Scheme to load files from directories specified with a relative path.
+
+The tests can be run with
+`scheme --quiet < testFormatRef.scm`
