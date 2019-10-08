@@ -58,3 +58,10 @@ Note: I did not figure out yet when exactly the definitions inside `Formatted re
 
 ### Adding format keys (and warning - improvement is necessary)
 In this version I am adding format keys through the style file `Formatted references_setup.ts` and apparently the `addToFormatRef` macro calls that I placed therein are executed only once. This arrangement works by defining the format list with `tm-define` (instead than with `define`) in the Scheme functions, and this means that it is the same in every TeXmacs document.
+
+## Testing
+There is a simple function to issue tests with the following property:
+* if the test is passed, the program is quiet
+* if the test is failed, the program outputs a description of the test, the test command and the desired output
+
+The test loads files from directories that are specified in an absolute way; I haven't yet figured out how to get Scheme to load files from directories specified with a relative path. 
