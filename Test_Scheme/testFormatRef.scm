@@ -4,9 +4,9 @@
 ;; try this https://stackoverflow.com/questions/50693165/is-there-a-way-to-turn-down-the-verbosity-of-mit-scheme
 ;; tried - it works
 
-(load "/home/giovanni/test/test TeXmacs/De Benito/version_04/selectFormat.scm")
-(load "/home/giovanni/test/test TeXmacs/De Benito/version_04/formatRefUtils.scm")
-(load "/home/giovanni/test/test TeXmacs/De Benito/version_04/manipulateList.scm")
+(load "/home/giovanni/test/test TeXmacs/formatRef/version_04/selectFormat.scm")
+(load "/home/giovanni/test/test TeXmacs/formatRef/version_04/formatRefUtils.scm")
+(load "/home/giovanni/test/test TeXmacs/formatRef/version_04/manipulateList.scm")
 (load "unitTestsSimple.scm")
 
 ;; define formatList for the functions that rely on it
