@@ -1,8 +1,8 @@
-;; but I need to find a better and general solution so that I test without worrying about the state of formatList
-;; (perhaps a function that sets and resets formatList, and I also would like it not to print anything to screen,
-;; as set! does and I do not want to see this output in this "unit testing")
+;; I do not want to see this output in this "unit testing"
 ;; try this https://stackoverflow.com/questions/50693165/is-there-a-way-to-turn-down-the-verbosity-of-mit-scheme
 ;; tried - it works
+;; run scheme --quiet < testFormatRef.scm in a terminal window
+
 
 (load "/home/giovanni/test/test TeXmacs/formatRef/version_04/selectFormat.scm")
 (load "/home/giovanni/test/test TeXmacs/formatRef/version_04/formatRefUtils.scm")
@@ -62,21 +62,15 @@
 ;; 1) the check is not on the output of the function
 ;; 2) I have to take into account that after the application of the function formatList is different
 ;; I "save" myself by resetting formatList, but I need to find a better and general solution so that I test without worrying about the state of formatList
-;; (perhaps a function that sets and resets formatList, and I also would like it not to print anything to screen,
-;; as set! does and I do not want to see this output in this "unit testing")
-;; try this https://stackoverflow.com/questions/50693165/is-there-a-way-to-turn-down-the-verbosity-of-mit-scheme
-(display "testing addToFormatList\n")
-(begin
-  (addToFormatList '("sec:" "Section"))
-  (test-expression "adding a format to the list (here we check the resulting format list with one that we have prepared)" (equal?
-						  formatList
-						  (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table") (list "sec:" "Section")))
-		   #t)
-  (set! formatList (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table"))))
+;; (perhaps a function that sets and resets formatList)
+;; (done)
+
+;; redone below with a function for checking format list modifications
 
 (display "testing addToFormatList\n")
-(test-formatList-modification "adding a format to the list"
-			      (addToFormatList '("sec:" "Section"))
-			      (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table") (list "sec:" "Section")))
+(test-formatList-modification
+ "adding a format to the list"
+ (addToFormatList '("sec:" "Section"))
+ (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table") (list "sec:" "Section")))
 			      
 
