@@ -5,7 +5,13 @@
 	((list? lst) (cons (addQuotesLst (car lst)) (addQuotesLst (cdr lst))))
 	(else (if (string? lst)
 		  (string-append "\"" lst "\"")
-		  lst))))  
+		  lst))))
+
+;; display expressions preceded by newlines
+(define (displayN expr)
+  (begin
+    (display "\n")
+    (display expr)))
 
 ;; Display both the expression and its result
 ;; I do not understand this syntax, but it works
@@ -62,4 +68,27 @@
      (begin (set! formatList (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table")))
 	    (test-expression comment exp res)
 	    (set! formatList (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table")))))))
+
+
+;; For testing the modifications of the list of formats
+;; still use define-syntax, as we need to substitute exp in the expression 'exp
+
+(define-syntax test-formatList-modification
+  (syntax-rules ()
+    ((_ comment formatListSetter newFormatList)
+     (begin
+       (set! formatList (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table")))
+       formatListSetter ; sets the format list
+       (if (equal? formatList newFormatList)
+	   "test passed"
+	   (begin
+	     (displayN "test failed")
+	     (displayN 'formatListSetter)
+	     (displayN "expected format list")
+	     (displayN newFormatList)
+	     (displayN "actual format list")
+	     (displayN formatList)
+	     (display "\n")))
+       (set! formatList (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table")))))))
+
 

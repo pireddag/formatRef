@@ -74,3 +74,9 @@
 		   #t)
   (set! formatList (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table"))))
 
+(display "testing addToFormatList\n")
+(test-formatList-modification "adding a format to the list"
+			      (addToFormatList '("sec:" "Section"))
+			      (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table") (list "sec:" "Section")))
+			      
+
