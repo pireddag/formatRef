@@ -1,4 +1,4 @@
-;; I do not want to see this output in this "unit testing"
+;; I do not want to see the output of functions in this "unit testing"
 ;; try this https://stackoverflow.com/questions/50693165/is-there-a-way-to-turn-down-the-verbosity-of-mit-scheme
 ;; tried - it works
 ;; run scheme --quiet < testFormatRef.scm in a terminal window
@@ -71,6 +71,18 @@
 (test-formatList-modification
  "adding a format to the list"
  (addToFormatList '("sec:" "Section"))
- (list (list "eq:" "Equation") (list "fig:" "Figure") (list "tab:" "Table") (list "sec:" "Section")))
+ (list (list "eq:" "Equation") (list "tab:" "Table") (list "fig:" "Figure") (list "tab:" "Table") (list "sec:" "Section")))
+
+(display "testing deleteFromFormatList (first occurrence) \n")
+(test-formatList-modification
+ "deleting a format from the list"
+ (deleteFromFormatList '("tab:" "Table") 1)
+ (list (list "eq:" "Equation") (list "fig:" "Figure")  (list "tab:" "Table")))
+
+(display "testing deleteFromFormatList (second occurrence) \n")
+(test-formatList-modification
+ "deleting a format from the list"
+ (deleteFromFormatList '("tab:" "Table") 2)
+ (list (list "eq:" "Equation") (list "tab:" "Table") (list "fig:" "Figure") ))
 			      
 
