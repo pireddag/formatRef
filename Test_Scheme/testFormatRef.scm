@@ -7,7 +7,7 @@
 (load "/home/giovanni/test/test TeXmacs/formatRef/version_04/selectFormat.scm")
 (load "/home/giovanni/test/test TeXmacs/formatRef/version_04/formatRefUtils.scm")
 (load "/home/giovanni/test/test TeXmacs/formatRef/version_04/manipulateList.scm")
-(load "unitTestsSimple.scm")
+(load "/home/giovanni/test/test TeXmacs/formatRef/version_04/Test_04_Scheme/unitTestsSimple.scm")
 
 ;; define formatList for the functions that rely on it
 ;; in the program is defined in defineList.scm using tm-define (so I cannot use it here and anyway an explicitly defined one is better)
@@ -71,18 +71,29 @@
 (test-formatList-modification
  "adding a format to the list"
  (addToFormatList '("sec:" "Section"))
- (list (list "eq:" "Equation") (list "tab:" "Table") (list "fig:" "Figure") (list "tab:" "Table") (list "sec:" "Section")))
+ (list (list "eq:" "Equation") (list "tab:" "Table") (list "fig:" "Figure") (list "tab:" "tbl.") (list "sec:" "Section")))
 
 (display "testing deleteFromFormatList (first occurrence) \n")
 (test-formatList-modification
  "deleting a format from the list"
  (deleteFromFormatList '("tab:" "Table") 1)
- (list (list "eq:" "Equation") (list "fig:" "Figure")  (list "tab:" "Table")))
+ (list (list "eq:" "Equation") (list "fig:" "Figure")  (list "tab:" "tbl.")))
 
 (display "testing deleteFromFormatList (second occurrence) \n")
 (test-formatList-modification
  "deleting a format from the list"
  (deleteFromFormatList '("tab:" "Table") 2)
- (list (list "eq:" "Equation") (list "tab:" "Table") (list "fig:" "Figure") ))
-			      
+ (list (list "eq:" "Equation") (list "tab:" "Table") (list "fig:" "Figure")))
 
+
+(display "testing replaceFormat (first occurrence) \n")
+(test-formatList-modification
+ "replacing a format"
+ (replaceFormat '("tab:" "table") 1)
+ (list (list "eq:" "Equation") (list "tab:" "table") (list "fig:" "Figure") (list "tab:" "tbl.")))
+
+(display "testing replaceFormat (second occurrence) \n")
+(test-formatList-modification
+ "replacing a format"
+ (replaceFormat '("tab:" "table") 2)
+ (list (list "eq:" "Equation") (list "tab:" "Table") (list "fig:" "Figure") (list "tab:" "table")))

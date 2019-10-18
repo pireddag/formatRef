@@ -73,12 +73,15 @@
 ;; For testing the modifications of the list of formats
 ;; still use define-syntax, as we need to substitute exp in the expression 'exp
 
+;; formatList set by this function contains a format with the format code "tab:" twice ((list "tab:" "Table") and (list "tab:" "tbl."))
+;; as we want to test functions that check the element position and act on lists with repeated elements
+
 (define-syntax test-formatList-modification
   (syntax-rules ()
     ((_ comment formatListSetter newFormatList) ; formatListSetter is a function that using a side effect sets the format list (e.g. addToFormatList)
      (begin
-       (set! formatList (list (list "eq:" "Equation")  (list "tab:" "Table") (list "fig:" "Figure") (list "tab:" "Table")))
-       ; formatList contains  (list "tab:" "Table") twice as we want to test functions that check the element position and act on lists with repeated elements
+       (set! formatList (list (list "eq:" "Equation")  (list "tab:" "Table") (list "fig:" "Figure") (list "tab:" "tbl.")))
+       ; formatList contains a format with the format code "tab:" twice (see comment before the function for details) 
        formatListSetter ; sets the format list - we are going to test the result
        (if (equal? formatList newFormatList)
 	   "test passed"
@@ -89,7 +92,8 @@
 	     (displayN newFormatList)
 	     (displayN "actual format list")
 	     (displayN formatList)
+	     (display "\n")
 	     (display "\n")))
-       (set! formatList (list (list "eq:" "Equation")  (list "tab:" "Table") (list "fig:" "Figure") (list "tab:" "Table")))))))
+       (set! formatList (list (list "eq:" "Equation")  (list "tab:" "Table") (list "fig:" "Figure") (list "tab:" "tbl.")))))))
 
 
