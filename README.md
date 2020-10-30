@@ -59,7 +59,14 @@ Note: I did not figure out yet when exactly the definitions inside `Formatted re
 ### Adding format keys (and warning - improvement is necessary)
 In this version I am adding format keys through the style file `Formatted references_setup.ts` and apparently the `addToFormatRef` macro calls that I placed therein are executed only once. This arrangement works by defining the format list with `tm-define` (instead than with `define`) in the Scheme functions, and this means that it is the same in every TeXmacs document.
 
-## Testing
+If the formatted references are presented “bare”, that is using the  TeXmacs macro instead of the format string as set up by the Formatted references_setup style file, please try Tools → Update → Styles.
+If that too does not work, copy the macros in the Formatted references_setup style file onto the preamble of this file. In this case TeXmacs will issue error messages onto the command line, as macros that add formats are executed repeatedly, but the package will work (i.e. the package issues the error messages, does nothing—as it should—and the formatted references are presented correctly).
+
+## Example files
+formatRef_examples.tm (with pdf output formatRef_examples.pdf). It uses `Formatted references_setup.ts` with format definitions for equations, figures, sections and tables.
+
+
+## Testing of Scheme functions
 There is a simple function to issue tests with the following property:
 * if the test is passed, the program is quiet
 * if the test is failed, the program outputs a description of the test, the test command and the desired output
