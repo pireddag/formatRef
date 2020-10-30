@@ -6,9 +6,13 @@ This program is inspired by the LaTeX package prettyref.
 
 ##### Table of Contents  
 [Description](#description)  
+
 [Macros](#macros)
+
 [Instructions](#instructions)
+
 [Example files](#example-files)
+
 [Testing of Scheme functions](#testing-of-scheme-functions)
 
 ## Description
