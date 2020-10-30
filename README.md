@@ -4,6 +4,13 @@ A set of Scheme functions for  formatting references in a TeXmacs document
 
 This program is inspired by the LaTeX package prettyref.
 
+##### Table of Contents  
+[Description](#description)  
+[Macros](#macros)
+[Instructions](#instructions)
+[Example files](#example-files)
+[Testing of Scheme functions](#testing-of-scheme-functions)
+
 ## Description
 
 This program provides the macro `formatRef` (`<formatRef|lab>`) which formats a reference choosing in a list of formats saved in the global variable formatList. Each format is a list consisting of two members; the first member is a format code, which is a short string, while the second member is the corresponding format to apply to the reference. The function selects the format by comparing the format code with the beginning of the label: the first element of formatList that matches is selected and the corresponding format string formatString is applied to the TeXmacs reference. 
