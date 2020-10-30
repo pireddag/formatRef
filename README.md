@@ -6,13 +6,9 @@ This program is inspired by the LaTeX package prettyref.
 
 ##### Table of Contents  
 [Description](#description)  
-
-[Macros](#macros)
-
-[Instructions](#instructions)
-
-[Example files](#example-files)
-
+[Macros](#macros)  
+[Installation instructions](#installation-instructions)  
+[Example files](#example-files)  
 [Testing of Scheme functions](#testing-of-scheme-functions)
 
 ## Description
@@ -44,7 +40,7 @@ The .pdf file shows how the TeXmacs files look like after the Scheme functions h
 * `<formatRef|lab>`
     * Generates a formatted reference for item with the label `lab`
 
-## Instructions
+## Installation instructions
 
 The program consists of the following files:
 * Style file
