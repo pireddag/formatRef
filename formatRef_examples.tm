@@ -13,12 +13,26 @@ references_setup>>
   Loading the style file <code*|Formatted references> makes the command
   <code*|formatRef> available; the <code*|Formatted references_setup> style
   file sets up formatted references for equations (<code*|eq:>), sections
-  (<code*|sec:>), figures (<code*|fig:>) and tables (<code*|tab:>).
+  (<code*|sec:>), figures (<code*|fig:>) and tables (<code*|tab:>). See
+  section \PInstructions\Q on the <code*|Readme.md> file for installation
+  instructions.
 
-  <\itemize>
-    <item>See section \PInstructions\Q on the <code*|Readme.md> file for
-    installation instructions\ 
-  </itemize>
+  <\note*>
+    If the formatted references are presented \Pbare\Q, that is using the
+    <inactive|<reference|>> <TeXmacs> macro instead of the format string as
+    set up by the <code*|Formatted references_setup> style file, please try
+    <code*|Tools> \<rightarrow\> <code*|Update> \<rightarrow\>
+    <code*|Styles>.
+
+    If that too does not work, copy the macros in the <code*|Formatted
+    references_setup> style file onto the preamble of this file. In this case
+    <TeXmacs> will issue error messages onto the command line, as macros that
+    add formats are executed repeatedly, but the package will work (i.e. the
+    package issues the error messages, does nothing\Vas it should\Vand the
+    formatted references are presented correctly).
+  </note*>
+
+  \;
 
   <\equation>
     tan<around*|(|x|)>=<frac|sin<around*|(|x|)>|cos<around*|(|x|)>><label|eq:eq1>
